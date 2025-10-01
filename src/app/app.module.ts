@@ -8,7 +8,6 @@ import { AngularFireStorageModule } from "@angular/fire/compat/storage";
 import { environment  } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
-import { ClipService } from './services/clip.service';
 
 const routes: Routes = [
 

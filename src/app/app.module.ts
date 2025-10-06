@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { VideoModule } from './video/video.module';
 
 import { environment  } from '../environments/environment';
 import { AppComponent } from './app.component';
@@ -43,7 +42,6 @@ const routes: Routes = [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    VideoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

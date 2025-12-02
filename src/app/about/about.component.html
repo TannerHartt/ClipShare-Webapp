@@ -1,4 +1,151 @@
-<!-- Main Content -->
-<p class="container mx-auto mt-4">
-  This is a basic about page to demonstrate basic routing capabilities.
-</p>
+<main class="max-w-4xl mx-auto px-4 py-12 space-y-16">
+
+  <!-- Hero Section -->
+  <section class="text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">About Clipshare</h1>
+    <p class="text-xl md:text-2xl text-gray-600 mb-6">
+      A modern video-sharing platform built with Angular & Tailwind CSS
+    </p>
+    <div class="flex justify-center">
+      <img src="assets/img/1.jpg" alt="Clipshare screenshot" class="w-full max-w-2xl rounded-lg shadow-md">
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about-me" class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+    <div class="md:col-span-3 space-y-4">
+      <h2 class="text-3xl font-semibold">About Me</h2>
+      <p class="text-white-700">
+        My name is Tanner Hart, and I’m a developer with a strong interest in building digital products that are simple,
+        efficient, and practical. I enjoy working across both design and engineering layers, and I gravitate toward projects
+        that let me refine my existing knowledge while also learning new concepts.
+      
+        Over the past few years I’ve worked on a wide range of applications—everything from marketing sites and UI components
+        to full stack software—while also running and supporting multiple small businesses. These experiences taught me how to
+        think critically about usability, performance, and scalability in real-world environments. Clipshare became a perfect
+        opportunity for me to merge those practical and technical skills into a single, full-featured application.
+      </p>
+      <p class="text-white-700">
+        I have a background in computer science and web development, with experience in frameworks like React, Angular, and Vue,
+        as well as backend technologies like Node.js and Firebase. I’m passionate about creating seamless user experiences and writing
+        clean, maintainable code. I have worked as a part of a few development teams, and am currently working at AMain Hobbies as apart
+        of their development team.
+      </p>
+    </div>
+  </section>
+
+  <!-- What is Clipshare Section -->
+  <section id="what-is-clipshare" class="space-y-6">
+    <h2 class="text-3xl font-semibold">What is Clipshare?</h2>
+    <p class="text-white-700">
+      Clipshare is a lightweight, modern video-sharing platform built as my capstone project. It allows users to upload
+      videos, browse content, view details, and interact with a streamlined, responsive interface. I designed Clipshare to
+      mimic the essential experience of larger video platforms but with a simpler, more focused approach to usability.
+    </p>
+    <ul class="list-disc list-inside text-white-700 space-y-2">
+      <li>Fast, responsive UI built with Angular + Tailwind</li>
+      <li>Clean, modern layout designed for clarity and ease of use</li>
+      <li>Smooth video handling with Firebase storage</li>
+      <li>Dynamic routing and transitions for a native-app feel</li>
+      <li>Minimal friction when navigating, watching, or interacting with content</li>
+    </ul>
+    <div class="mt-6">
+      <img src="assets/img/2.jpg" alt="Clipshare UI screenshot" class="w-full rounded-lg shadow-md">
+    </div>
+  </section>
+
+  <!-- Motivation Section -->
+  <section id="motivation" class="space-y-6">
+    <h2 class="text-3xl font-semibold">Why I Built This</h2>
+    <p class="text-white-700">
+      I chose this project because I wanted something that challenged me across the full web development stack—UI design,
+      application logic, data persistence, media handling, and deployment. Video-based projects bring unique challenges:
+      storage, performance, responsive design, playback behavior, and consistent UX across device sizes.
+    </p>
+    <p>Building Clipshare allowed me to deepen my experience with: </p>
+    <ul class="list-disc list-inside text-white-700 space-y-2">
+      <li>To learn more about Angular compared to the frameworks I use more often.</li>
+      <li>I prefer using tailwind over writing custom CSS for rapid UI development.</li>
+      <li>I wanted a simple program to learn concepts that also had rewarding features like the ability to share clips with friends.</li>
+    </ul>
+  </section>
+
+  <!-- Tools & Technologies Section -->
+  <section id="tools" class="space-y-6">
+    <h2 class="text-3xl font-semibold">Tools & Technologies</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-6">
+      <div *ngFor="let tool of tools" class="flex items-start space-x-4 p-4 border rounded-lg hover:shadow-lg transition">
+        <i [class]="tool.iconClass + ' w-10 h-10 text-indigo-600'" aria-hidden="true"></i>
+        <div class="ml-4">
+          <a [href]="tool.link" target="_blank" rel="noopener noreferrer"><h3 class="text-xl font-medium">{{ tool.name }}</h3></a>
+          <p class="text-sm text-gray-600">{{ tool.category }}</p>
+          <p class="text-white-700 mt-1">{{ tool.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deployment & Hosting Section -->
+  <section id="deployment" class="space-y-6">
+    <h2 class="text-3xl font-semibold">Deployment & Hosting</h2>
+    <div class="text-white-700 space-y-4">
+      <p>This project is deployed using Vercel as they allow free unlimited hosting for passion projects, perfect for
+        presenting side projects like this.</p>
+      <h3 class="text-2xl font-medium mt-4">Frontend (Client) Deployment</h3>
+      <p>
+        Clipshare is built as a near fully client side Angular application styled with Tailwind CSS.
+        The production build is generated using Angular’s build pipeline, producing a highly efficient static
+        bundle.
+        Vercel serves this bundle through its global network, ensuring fast load times, automatic caching, and
+        instant rollback capabilities.
+        Client side routing is configured to rewrite all non file paths to <code>index.html</code>, allowing deep links
+        and browser refreshes to work correctly.
+      </p>
+  
+      <h3 class="text-2xl font-medium mt-4">Media Storage & Streaming</h3>
+      <p>
+        All video uploads and related metadata are stored in Firebase.
+        Firebase Storage is responsible for handling large media assets, managing upload sessions, delivering
+        optimized streaming URLs for playback, as well as user authentication.
+        Videos are distributed through Firebase’s global CDN, ensuring smooth and consistent performance across devices.
+        This approach keeps backend complexity low while providing a reliable and scalable media layer for the
+        application. A bonus is its also free.
+      </p>
+  
+      <h3 class="text-2xl font-medium mt-4">CI/CD & Workflow</h3>
+      <p>
+        The project is managed through GitHub, and every push triggers an automated deployment pipeline in Vercel.
+        Feature branches generate preview deployments that allow testing changes in an environment before
+        merging.
+        When updates are merged into the main branch, Vercel automatically builds and publishes a fresh production
+        version.
+        This workflow enabled rapid iteration, safe testing, and continuous delivery throughout development.
+      </p>
+    </div>
+  </section>
+
+  <!-- Lessons & What’s Next Section -->
+  <section id="lessons" class="space-y-6">
+    <h2 class="text-3xl font-semibold">What I Learned</h2>
+    <p>Building Clipshare helped reinforce several core concepts across both development and deployment:</p>
+    <ul class="list-disc list-inside text-white-700 space-y-2">
+      <li>Component driven architecture using Angular’s modular environment</li>
+      <li>Rapid UI development using Tailwind CSS</li>
+      <li>Balancing UI simplicity with interactive functionality for a clean user experience</li>
+      <li>Working with media files in a cloud environment, understanding transfer limits, caching, and compression.</li>
+      <li>Basic database rules and security considerations</li>
+      <li>Deploying scalable static applications with modern CI/CD with Vercel</li>
+    </ul>
+    <p>This project pushed me to refine my understanding of front-end engineering while also giving me a deeper appreciation
+      for modern hosting and cloud solutions.</p>
+  </section>
+
+  <!-- Footer / Contact Section -->
+  <section id="contact" class="text-center py-12">
+    <p class="text-gray-600">
+      Built by <strong>Tanner Hart</strong> • <a href="https://github.com/tannerhartt/clipshare" class="text-indigo-600 hover:underline">GitHub Repo</a>
+    </p>
+    <p class="text-gray-500 mt-2">&copy; 2025 Tanner Hart. All rights reserved.</p>
+  </section>
+
+</main>

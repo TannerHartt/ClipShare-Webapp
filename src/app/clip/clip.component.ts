@@ -3,12 +3,11 @@ import { ActivatedRoute, Params } from '@angular/router';
 import videojs from 'video.js';
 import { iClip } from '../models/clip.model';
 import { DatePipe } from '@angular/common';
-import { FbTimestampPipe } from '../pipes/fb-timestamp.pipe';
 
 @Component({
   selector: 'app-clip',
   templateUrl: './clip.component.html',
-  styleUrls: [],
+  styleUrls: ['./clip.component.css'],
   encapsulation: ViewEncapsulation.None,
   providers: [DatePipe]
 })

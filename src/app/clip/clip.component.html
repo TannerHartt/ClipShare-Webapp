@@ -5,15 +5,14 @@
     <h1 class="font-bold mb-2 text-3xl">{{ clip?.title }}</h1>
     <div class="text-gray-400 mb-6">
       Uploaded By {{ clip?.displayName }} on
-      <!-- <span>{{ clip?.timestamp | fbTimestamp }}</span> -->
+      <span>{{ clip?.timestamp | fbTimestamp }}</span>
     </div>
 
     <!-- Video Editor -->
     <div class="relative aspect-[2/1] overflow-hidden">
-    <!-- <div class="relative aspect-video overflow-hidden"> OTHER SOLUTION FOR NATIVE 16:9 VIDEOS -->
+      <!-- <div class="relative aspect-video overflow-hidden"> OTHER SOLUTION FOR NATIVE 16:9 VIDEOS -->
       <!-- Video Player -->
-      <video controls #videoPlayer crossorigin
-             class="video-js vjs-theme-forest mx-auto">
+      <video controls #videoPlayer crossorigin class="video-js vjs-theme-forest mx-auto">
         <!-- <source src="../assets/video/hero.webm" type="video/webm"> DEFAULT LEAGUE VIDEO -->
       </video>
     </div>
